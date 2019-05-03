@@ -1,11 +1,11 @@
-from bottle import run, route, view, get, post, request, staticfile
+from bottle import run, route, view, get, post, request, static_file
 from itertools import count
 
-class school_canteen:
+class canteen_food:
     _ids = count(0)
     
     
-    def __init__(self, name, image, stock, description):
+    def __init__(self, name, image, stock, description, price):
         self.id = next(self._ids)
         self.food_name = name
         self.food_image = image
@@ -14,11 +14,11 @@ class school_canteen:
         self.food_description = description
         
 canteen_test = [
-    
-    
-    
-    
-    
+    canteen_food("Sushi Roll Pack", "image", "5", "price", "description"),
+    canteen_food("hot Dog and Chips", "image", "12", "price", "description"),
+    canteen_food("Ham and Cheese sandwich", "image", "4", "price", "description") 
     ]
         
-    
+        
+        
+run(host = "0.0.0.0", port = 8080, reloader = True, debug = True)
