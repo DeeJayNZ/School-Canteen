@@ -5,7 +5,7 @@ class canteen_food:
     _ids = count(0)
     
     
-    def __init__(self, name, image, stock, description, price):
+    def __init__(self, name, image, stock, description, price):#allows my list to find the right name, stock ect
         self.id = next(self._ids)
         self.food_name = name
         self.food_image = image
