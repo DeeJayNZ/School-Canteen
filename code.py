@@ -1,4 +1,4 @@
-from bottle import run, route, view, get, post, request, static_file
+from bottle import run, route, view, get, post, request, static_file#importing functions to help code run
 from itertools import count
 
 class canteen_food:
@@ -14,11 +14,20 @@ class canteen_food:
         self.food_description = description
         
 canteen_test = [
-    canteen_food("Sushi Roll Pack", "image", "5", "price", "description"),
+    canteen_food("Sushi Roll Pack", "", "5", "price", "description"),
     canteen_food("hot Dog and Chips", "image", "12", "price", "description"),
     canteen_food("Ham and Cheese sandwich", "image", "4", "price", "description") 
     ]
+
+
+
+@route("/")
+@view("index")
+def index():#this function will attatch the decorators above
+    pass
         
-        
+@route('/picture/<filename>')
+def saved_pics(filename):
+    return static_file(filename, root = './images')       
         
 run(host = "0.0.0.0", port = 8080, reloader = True, debug = True)
