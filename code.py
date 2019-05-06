@@ -26,6 +26,8 @@ canteen_test = [
 def index():#this function will attatch the decorators above
     pass
         
-        
+@route('/picture/<filename>')
+def saved_pics(filename):
+    return static_file(filename, root = './images')       
         
 run(host = "0.0.0.0", port = 8080, reloader = True, debug = True)
