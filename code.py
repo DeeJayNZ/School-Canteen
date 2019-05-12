@@ -14,9 +14,9 @@ class canteen_food:
         self.food_description = description
         
 canteen_test = [
-    canteen_food("Sushi Roll Pack", "", "5", "price", "description"),
-    canteen_food("hot Dog and Chips", "image", "12", "price", "description"),
-    canteen_food("Ham and Cheese sandwich", "image", "4", "price", "description") 
+    canteen_food("Sushi Roll Pack", "", 5, "price", "description"),
+    canteen_food("Hot Dog and Chips", "image", 12, "price", "description"),
+    canteen_food("Ham and Cheese sandwich", "image", 4, "price", "description") 
     ]
 
 
@@ -24,6 +24,17 @@ canteen_test = [
 @route("/")
 @view("index")
 def index():#this function will attatch the decorators above
+    pass
+
+@route("/food")
+@view("food")
+def menu_page():
+    data = dict (food_list = canteen_test)
+    return data
+
+@route ("/tandc")
+@view("tandc")
+def terms_page():
     pass
         
 @route('/picture/<filename>')
