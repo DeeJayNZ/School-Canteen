@@ -12,12 +12,12 @@
 		  </div>
 		  <div class="card-stacked">
 			<div class="card-content">
-			<button class="btn waves-effect waves-light deep-orange accent-4" type="submit" name="action"><font color = 'red'>Stock {{food.food_stock}}</font></button>
-			  <div class = 'container'>{{food.food_description}}</p>
+			<button class="btn waves-effect waves-light deep-orange accent-4" type="submit" name="action"><font color = 'blue darken-4'>Stock = {{food.food_stock}}</font></button>
+			  <div class = 'container'><p>{{food.food_description}}</p>
 				%if food.food_stock > 0 :
 					<a href="/purchasefood.id}}"><button class="btn waves-effect waves-light deep-orange accent-4" type="submit" name="action"><font color = "black">Purchase</font>
-					<i class="material-icons right"><img src="/picture/trolley.png" alt="buy now" style="width:20px;helight:20px;"></a></i>
 				%else :
+					<i class="material-icons right"><img src="/picture/trolley.png" alt="buy now" style="width:20px;helight:20px;"></a></i>
 					<a href="/purchase/{{food.food_id}}"><button class="btn waves-effect waves-light disabled" type="submit" name="action">Out Of Stock :(
 					<i class="material-icons right"><img src="/picture/trolley.png" alt="buy now" style="width:20px;helight:20px;"></a></i>
 				%end

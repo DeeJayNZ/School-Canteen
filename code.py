@@ -5,7 +5,7 @@ class canteen_food:
     _ids = count(0)
     
     
-    def __init__(self, name, image, stock, description, price):#allows my list to find the right name, stock ect
+    def __init__(self, name, image, stock, price, description):#allows my list to find the right name, stock ect
         self.id = next(self._ids)
         self.food_name = name
         self.food_image = image
@@ -14,9 +14,9 @@ class canteen_food:
         self.food_description = description
         
 canteen_test = [
-    canteen_food("Sushi Roll Pack", "", 5, "price", "description"),
-    canteen_food("Hot Dog and Chips", "image", 12, "price", "description"),
-    canteen_food("Ham and Cheese sandwich", "image", 4, "price", "description") 
+    canteen_food("Sushi Roll Pack", "sushi.JPG", 5, 21, "Sushi Roll Pack veri yewmi"),
+    canteen_food("Hot Dog and Chips", "hotdog.JPG", 12, 13.50, "Hot Dog and Chips very yum"),
+    canteen_food("Ham and Cheese sandwich", "ham.JPG", 4, 100000, "Ham and Cheese sandwich for old people") 
     ]
 
 
