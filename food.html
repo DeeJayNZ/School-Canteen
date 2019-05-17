@@ -5,26 +5,26 @@
 	<body bgcolor = "#0d47a1">			
 		%for food in food_list:					
 			<div class="col s12 m7">
-		<h2 class="header">{{food.food_name}}</h2>
-		<div class="card horizontal red accent-4">
-		  <div class="card-image">
-			<img src="/picture/{{food.food_image}}" style="width:300px;height:400px;">
-		  </div>
-		  <div class="card-stacked">
+			<h2 class="header">{{food.food_name}}</h2>
+			<div class="card horizontal red accent-4">
+			<div class="card-image">
+			<img src="/picture/{{food.food_image}}" style="height = 300px;">
+			</div>
+			<div class="card-stacked">
 			<div class="card-content">
-			<button class="btn waves-effect waves-light deep-orange accent-4" type="submit" name="action"><font color = 'blue darken-4'>Stock = {{food.food_stock}}</font></button>
-			  <div class = 'container'><p>{{food.food_description}}</p>
+			<button class="btn waves-effect waves-light blue darken-4" type="submit" name="action"><font color = 'blue darken-4'>Stock = {{food.food_stock}}</font></button>
 				%if food.food_stock > 0 :
-					<a href="/purchasefood.id}}"><button class="btn waves-effect waves-light deep-orange accent-4" type="submit" name="action"><font color = "black">Purchase</font>
+					<a href="/success/{{food.id}}"><button class="btn waves-effect waves-light " type="submit" name="action"><font color = "black">Purchase</font>
 				%else :
 					<i class="material-icons right"><img src="/picture/trolley.png" alt="buy now" style="width:20px;helight:20px;"></a></i>
-					<a href="/purchase/{{food.food_id}}"><button class="btn waves-effect waves-light disabled" type="submit" name="action">Out Of Stock :(
+					<a href="/success/{{food.id}}"><button class="btn waves-effect waves-light disabled" type="submit" name="action">Out Of Stock :(
 					<i class="material-icons right"><img src="/picture/trolley.png" alt="buy now" style="width:20px;helight:20px;"></a></i>
 				%end
 			</button>
 			</div>
 			</div>
 		  </div>
+		</div>
 		</div>
 		%end
 

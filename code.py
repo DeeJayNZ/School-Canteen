@@ -37,6 +37,13 @@ def menu_page():
 def terms_page():
     pass
         
+        
+@route("/success/<food_id>")
+@view("success")
+def success_page(food_id):
+    food_id = int(food_id)
+
+
 @route('/picture/<filename>')
 def saved_pics(filename):
     return static_file(filename, root = './images')       
