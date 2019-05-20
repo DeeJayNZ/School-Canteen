@@ -48,9 +48,14 @@ def success_page(food_id):
             found_food = food
     data = dict(food = found_food)
 
-    found_food.food_stock= found_food.food_stock -1
+    found_food.food_stock -= 1
 
     return data    
+
+@route("/restock")
+@view("restock")
+def restock_page():
+    pass
 
 @route('/picture/<filename>')
 def saved_pics(filename):
