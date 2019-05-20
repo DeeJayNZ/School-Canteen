@@ -15,7 +15,7 @@ Ver 1.0
   Linking my nav bar to different pages inside my server, order page and terms and conditions
   
  Ver 4.0
-  displaying menu to the user, with stock variables and buy buttons 
+  displaying menu to the user, with stock variables and buy buttons. Adding success page if food sold succesfully
   
  Ver 5.0
-  Adding the restock function to the program, along with success page is food sold succesfully
+  Adding the restock function to the program.

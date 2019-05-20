@@ -5,7 +5,7 @@ class canteen_food:
     _ids = count(0)
     
     
-    def __init__(self, name, image, stock, description, price):#allows my list to find the right name, stock ect
+    def __init__(self, name, image, stock, price, description):#allows my list to find the right name, stock ect
         self.id = next(self._ids)
         self.food_name = name
         self.food_image = image
@@ -14,9 +14,9 @@ class canteen_food:
         self.food_description = description
         
 canteen_test = [
-    canteen_food("Sushi Roll Pack", "", 5, "price", "description"),
-    canteen_food("Hot Dog and Chips", "image", 12, "price", "description"),
-    canteen_food("Ham and Cheese sandwich", "image", 4, "price", "description") 
+    canteen_food("Sushi Roll Pack", "sushi.JPG", 5, 21, "Sushi Roll Pack veri yewmi"),
+    canteen_food("Hot Dog and Chips", "hotdog.JPG", 12, 13.50, "Hot Dog and Chips very yum"),
+    canteen_food("Ham and Cheese sandwich", "ham.JPG", 4, 100000, "Ham and Cheese sandwich for old people") 
     ]
 
 
@@ -37,6 +37,21 @@ def menu_page():
 def terms_page():
     pass
         
+        
+@route("/success/<food_id>")
+@view("success")
+def success_page(food_id):
+    food_id = int(food_id)
+    found_food = None
+    for food in canteen_test:
+        if food.id == food_id:
+            found_food = food
+    data = dict(food = found_food)
+
+    found_food.food_stock= found_food.food_stock -1
+
+    return data    
+
 @route('/picture/<filename>')
 def saved_pics(filename):
     return static_file(filename, root = './images')       
