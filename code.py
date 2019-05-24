@@ -52,7 +52,7 @@ def success_page(food_id):
 
     return data    
 
-@route("/restock")
+@route("/restock", method='POST')
 @view("restock")
 def restock_page():
     pass
