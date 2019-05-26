@@ -52,10 +52,28 @@ def success_page(food_id):
 
     return data    
 
-@route("/restock", method='POST')
+@route("/restock")
 @view("restock")
 def restock_page():
     pass
+
+
+@route("/restock-success", method='POST')
+@view("restock-success")
+def restock_success():
+    name = request.forms.get('food')
+    food_id = int(food_id)
+    found_food = None
+    for food in canteen_test:
+        if food.id == food_id:
+            found_food = food
+    data = dict(food = found_food)
+
+    found_food.food_stock = food.food_stock + restock
+
+   # restock = request.forms.get('restock')
+    
+   # stock = stock + restock
 
 @route('/picture/<filename>')
 def saved_pics(filename):

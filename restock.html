@@ -2,34 +2,27 @@
 <html> 
 %include('shared/header.html')
 %include('shared/navbar.html')
-		<body bgcolor = "#0d47a1">
-		<form class="col s12" action = "/sign-up-success" method = "post">
-				<input id="first_name" name="name" type="text" class="validate">
+<body bgcolor = "#0d47a1">
+		<form class="col s12" action = "/restock-success" method = "post">
+				<input id="food" name="food" type="text" class="validate">
 					<select class="browser-default">
 					<option value="" disabled selected>Choose what you would like to restock</option>
-					<option value="1">Option 1</option>
-					<option value="2">Option 2</option>
-					<option value="3">Option 3</option>
+					<option value="1">Sushi Roll Pack</option>
+					<option value="2">Hot Dog and Chips</option>
+					<option value="3">Ham and Cheese Sandwich</option>
 					</select>
-			<div class="input-field col s6">
-			  <input id="inp_dob" type="text" name="dob"class="validate">
-			  <label for="inp_dob">DD.MM.YY</label>
-			</div>
-		  <div class="row">
-			<div class="input-field col s12">
-			  <input id="email" type="email" name="email" class="validate">
-			  <label for="email">Email</label>
-			</div>
-		  </div>
-		  <div class="row">
-			<div class="col s12">
-			</div>
-		  </div>
+				<input id="food_amount" name="restock" type="int" class="validate">
+					<select class="browser-default">
+					<option value="" disabled selected>Choose what amount you would like to restock</option>
+					<option value="1">5</option>
+					<option value="2">10</option>
+					<option value="3">15</option>
+					</select>
 			  <button class="btn waves-effect waves-light" type="submit" name="action">Submit
     <i class="material-icons right">:D</i>
   </button>
 					
 		</form>
-		</body>
+</body>
 %include('shared/footer.html')
 </html>
