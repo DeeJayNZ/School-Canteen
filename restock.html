@@ -3,7 +3,7 @@
 %include('shared/header.html')
 %include('shared/navbar.html')
 <body bgcolor = "#0d47a1">
-		<form class="col s12" action = "/restock-success" method = "post">
+		<form class="col s12" action = "/restock-success/<food_id>" method = "post">
 				<input id="food" name="food" type="text" class="validate">
 					<select class="browser-default">
 					<option value="" disabled selected>Choose what you would like to restock</option>
@@ -11,7 +11,7 @@
 					<option value="2">Hot Dog and Chips</option>
 					<option value="3">Ham and Cheese Sandwich</option>
 					</select>
-				<input id="food_amount" name="restock" type="int" class="validate">
+				<input id="food_amount" name="restock" type="text" class="validate">
 					<select class="browser-default">
 					<option value="" disabled selected>Choose what amount you would like to restock</option>
 					<option value="1">5</option>
