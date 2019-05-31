@@ -52,13 +52,14 @@ def success_page(food_id):
 
     return data    
 
-@route("/restock")
+@route("/restock/<food_id>")
 @view("restock")
-def restock_page():
-    pass
+def restock_page(food_id):
+    data = dict(food=canteen_test)
+    return data
 
 
-@route("/restock-success/<food_id>", method='POST')
+@route('/restock-success/<food_id>', method='POST')
 @view("restock-success")
 def restock_success(food_id):
     food_id = int(food_id)
