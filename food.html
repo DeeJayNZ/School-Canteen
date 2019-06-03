@@ -11,13 +11,15 @@
 			<img src="/picture/{{food.food_image}}" style="height = 300px;">
 			</div>
       <div class="container">
+	  <font color = 'white'>
         <h2>{{food.food_description}}</h2>
 		<h2>${{food.food_price}}</h2>
+		<h2>Stock = {{food.food_stock}}</h2>
+		</font>
       </div>
 		<a href="/restock/{{food.id}}"><button class="btn waves-effect waves-light blue darken-4" type="submit" name="action"><font color = 'white'>Restock</font></button>
 			<div class="card-stacked">
 			<div class="card-content">
-			<button class="btn waves-effect waves-light blue darken-4" type="submit" name="action"><font color = 'white'>Stock {{food.food_stock}}</font></button>
 				%if food.food_stock > 0 :
 					<a href="/success/{{food.id}}"><button class="btn waves-effect waves-light blue darken-4" type="submit" name="action"><font color = "white">Purchase</font></button></a>
 				%else :
@@ -31,7 +33,6 @@
 		  </div>
 		</div>
 		%end
-		</div>
 	%include('shared/footer.html')
 	</body>	
 </html>

@@ -3,25 +3,15 @@
 %include('shared/header.html')
 %include('shared/navbar.html')
 <body bgcolor = "#0d47a1">
-				<form class="col s12" action = "/restock-success/{{food.id}}" method = "post">
-					<input id="food" name="food" type="text" class="validate">
-					<select class="browser-default">
-					<option value="" disabled selected>Choose what you would like to restock</option>
-				%for canteen_food in food:
-					<option value="1">{{canteen_food.food_name}}</option>
-					</select>
-				%end
-				</form>
-					<form class="col s12">
-						<input id="food_amount" name="restock" type="text" class="validate">
-						<div class="row">
-						<div class="input-field col s6">
-						<input placeholder="Placeholder" id="first_name" type="text" class="validate">
-						<label for="stock">How much would you like to stock up?</label>
-						</div>
-						</div>
-						</form>
-			 <button class="btn waves-effect waves-light" type="submit" name="action">Submit</button>
+	<form class="col s12" action = "/restock-success/{{food_list.id}}" method = "post">
+		<label for="stock">How much would you like to stock up?</label>
+		<input id="food_amount" name="restock" type="number" class="validate">
+		<div class="row">
+		<div class="input-field col s6">
+		</div>
+		</div>
+		<a href = "/restock-success/{{food_list.id}}"><button class="btn waves-effect waves-light" type="submit" name="action">Submit</button></a>
+	</form>
 					
 </body>
 %include('shared/footer.html')

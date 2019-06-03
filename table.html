@@ -1,0 +1,16 @@
+<!DOCTYPEHTML>
+<html> 
+	%include('shared/header.html')
+	%include('shared/navbar.html')
+	      %for item in food:
+		  <table>
+        <thead>
+          <tr>
+              <th>{{food.name}}</th>
+              <th>{{food.price}}</th>
+              <th>{{food.stock}}</th>
+          </tr>
+        </thead>
+		%end
+	%include('shared/footer.html')
+</html>
