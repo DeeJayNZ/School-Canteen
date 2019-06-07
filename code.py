@@ -48,9 +48,42 @@ def success_page(food_id):
             found_food = food
     data = dict(food = found_food)
 
-    found_food.food_stock= found_food.food_stock -1
+    found_food.food_stock -= 1
 
     return data    
+
+@route("/restock/<food_id>")
+@view("restock")
+def restock_page(food_id):
+    
+    food_id = int(food_id)
+    found_food = None
+    for food in canteen_test:
+        if food.id == food_id:
+            found_food = food
+    data = dict(food_list = found_food)    
+
+    return data
+
+
+@route("/restock-success/<food_id>", method="POST")
+@view("restock-success")
+def restock_success(food_id):
+    food_id = int(food_id)
+    found_food = None
+    for food in canteen_test:
+        if food.id == food_id:
+            found_food = food
+            data = dict(food = found_food)
+            restock = request.forms.get("restock")
+            restock = int(restock)
+            found_food.food_stock = found_food.food_stock + restock
+            
+@route("/table")
+@view("table")
+def table():
+    data = dict (food_list = canteen_test)
+    return data
 
 @route('/picture/<filename>')
 def saved_pics(filename):
