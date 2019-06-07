@@ -2,15 +2,24 @@
 <html> 
 	%include('shared/header.html')
 	%include('shared/navbar.html')
-	      %for item in food:
-		  <table>
+	<body bgcolor = "#0d47a1">
+      <table class = "striped">
         <thead>
           <tr>
-              <th>{{food.name}}</th>
-              <th>{{food.price}}</th>
-              <th>{{food.stock}}</th>
+              <th>Name</th>
+              <th>Price($)</th>
+              <th>Stock</th>
           </tr>
         </thead>
+	      %for food in food_list:
+			<tbody>
+			<tr>
+				<td>{{food.food_name}}</td>
+				<td>{{food.food_price}}</td>
+				<td>{{food.food_stock}}</td>
+			</tr>
 		%end
+		</table>
+	</body>
 	%include('shared/footer.html')
 </html>

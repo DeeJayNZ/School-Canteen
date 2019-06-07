@@ -78,6 +78,12 @@ def restock_success(food_id):
             restock = request.forms.get("restock")
             restock = int(restock)
             found_food.food_stock = found_food.food_stock + restock
+            
+@route("/table")
+@view("table")
+def table():
+    data = dict (food_list = canteen_test)
+    return data
 
 @route('/picture/<filename>')
 def saved_pics(filename):
