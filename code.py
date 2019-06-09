@@ -15,8 +15,8 @@ class canteen_food:
         
 canteen_test = [
     canteen_food("Sushi Roll Pack", "sushi.JPG", 5, 21, "Sushi Roll Pack veri yewmi"),
-    canteen_food("Hot Dog and Chips", "hotdog.JPG", 12, 13.50, "Hot Dog and Chips very yum"),
-    canteen_food("Ham and Cheese sandwich", "ham.JPG", 4, 100000, "Ham and Cheese sandwich for old people") 
+    canteen_food("Hot Dog and Chips", "hotdog.JPG", 12, 13.5, "Hot Dog and Chips very yum"),
+    canteen_food("Ham and Cheese sandwich", "ham.JPG", 4, 12.4, "Ham and Cheese sandwich for old people") 
     ]
 
 
