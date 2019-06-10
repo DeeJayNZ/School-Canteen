@@ -5,15 +5,14 @@ class canteen_food:
     _ids = count(0)
     
     
-    def __init__(self, name, image, stock, price, description, count,):#allows my list to find the right name, stock ect
+    def __init__(self, name, image, stock, price, description, sold):#allows my list to find the right name, stock ect
         self.id = next(self._ids)
         self.food_name = name
         self.food_image = image
         self.food_stock = stock
         self.food_price = price
         self.food_description = description
-        self.food_count = count
-        
+        self.food_sold = sold
 canteen_test = [
     canteen_food("Sushi Roll Pack", "sushi.JPG", 5, 21, "Sushi Roll Pack veri yewmi", 0),
     canteen_food("Hot Dog and Chips", "hotdog.JPG", 12, 13.5, "Hot Dog and Chips very yum", 0),
@@ -49,7 +48,7 @@ def success_page(food_id):
             found_food = food
     data = dict(food = found_food)
     found_food.food_stock -= 1
-    found_food.food_count = found_food.food_count + 1
+    found_food.food_sold += 1
 
     return data    
 
