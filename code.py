@@ -1,11 +1,11 @@
 from bottle import run, route, view, get, post, request, static_file#importing functions to help code run
 from itertools import count
 
-class canteen_food:
-    _ids = count(0)
+class canteen_food:#names the class
+    _ids = count(0) #sets _ids to count(0)
     
     
-    def __init__(self, name, image, stock, price, description, sold):#allows my list to find the right name, stock ect
+    def __init__(self, name, image, stock, price, description, sold):#this function initialises all the variables you want in your menu, name, stock, price ect.
         self.id = next(self._ids)
         self.food_name = name
         self.food_image = image
@@ -13,7 +13,7 @@ class canteen_food:
         self.food_price = price
         self.food_description = description
         self.food_sold = sold
-canteen_test = [
+canteen_test = [ #this is the list that contains all my test data
     canteen_food("Sushi Roll Pack", "sushi.JPG", 5, 21, "Sushi Roll Pack veri yewmi", 0),
     canteen_food("Hot Dog and Chips", "hotdog.JPG", 12, 13.5, "Hot Dog and Chips very yum", 0),
     canteen_food("Ham and Cheese sandwich", "ham.JPG", 4, 12.4, "Ham and Cheese sandwich for old people", 0) 
@@ -21,8 +21,8 @@ canteen_test = [
 
 
 
-@route("/")
-@view("index")
+@route("/")#allows the python server to find the location of the webpage in my folder
+@view("index")#this then displays the webpage to the user
 def index():#this function will attatch the decorators above
     pass
 
