@@ -14,9 +14,9 @@ class canteen_food:#names the class
         self.food_description = description
         self.food_sold = sold
 canteen_test = [ #this is the list that contains all my test data
-    canteen_food("Sushi Roll Pack", "sushi.JPG", 5, 21, "Sushi Roll Pack veri yewmi", 0),
+    canteen_food("Sushi Roll Pack", "sushi.JPG", 5, 20, "Sushi Roll Pack very yum", 0),
     canteen_food("Hot Dog and Chips", "hotdog.JPG", 12, 13.5, "Hot Dog and Chips very yum", 0),
-    canteen_food("Ham and Cheese sandwich", "ham.JPG", 4, 12.4, "Ham and Cheese sandwich for old people", 0) 
+    canteen_food("Ham and Cheese sandwich", "ham.JPG", 4, 12.4, "Ham and Cheese sandwich very yum", 0) 
     ]
 
 
