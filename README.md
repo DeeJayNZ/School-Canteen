@@ -19,3 +19,6 @@ Ver 1.0
   
  Ver 5.0
   Adding the restock function to the program.
+
+Ver 6.0
+	Adding the total food sold variable and any relevant bug fixes
