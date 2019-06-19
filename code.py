@@ -1,5 +1,5 @@
 from bottle import run, route, view, get, post, request, static_file#importing functions to help code run
-from itertools import count
+from itertools import count #imports count from itertools
 
 class canteen_food:#names the class
     _ids = count(0) #sets _ids to count(0)
@@ -7,7 +7,7 @@ class canteen_food:#names the class
     
     def __init__(self, name, image, stock, price, description, sold):#this function creates all the objects you want in your menu, name, stock, price ect.
         self.id = next(self._ids)
-        self.food_name = name
+        self.food_name = name #these create the object and then rename it so it is easily referenced
         self.food_image = image
         self.food_stock = stock
         self.food_price = price
@@ -51,6 +51,12 @@ def success_page(food_id):
     found_food.food_sold += 1 #also adds one to total food sold whoch I display on the table webpage
 
     return data    
+
+@route("/restock")
+@view("restock")
+def restock_page():
+    data = dict (food_list = canteen_test)
+    return data
 
 @route("/restock/<food_id>")
 @view("restock")
