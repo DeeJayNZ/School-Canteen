@@ -14,7 +14,7 @@ class canteen_food:#names the class
         self.food_description = description
         self.food_sold = sold
 canteen_test = [ #this is the list that contains all my test data
-    canteen_food("Sushi Roll Pack", "sushi.JPG", 5, 20, "Sushi Roll Pack very yum", 0),
+    canteen_food("Sushi Roll Pack", "sushi.JPG", 5, 20, "Sushi Roll Pack very yum", 0),#test data for each food item.
     canteen_food("Hot Dog and Chips", "hotdog.JPG", 12, 13.5, "Hot Dog and Chips very yum", 0),
     canteen_food("Ham and Cheese sandwich", "ham.JPG", 4, 12.4, "Ham and Cheese sandwich very yum", 0) 
     ]
@@ -52,24 +52,22 @@ def success_page(food_id):
 
     return data    
 
-@route("/restock")
-@view("restock")
-def restock_page():
-    data = dict (food_list = canteen_test)
-    return data
+@route("/restock-page")
+@view("restock-page")
+def restock():
+    data = dict (food_list = canteen_test)# this makes a dictionary with all my test data
+    return data# this returns data
 
-@route("/restock/<food_id>")
+@route("/restock/<food_id>")# this passes /restock food_id
 @view("restock")
-def restock_page(food_id):
-    
-    food_id = int(food_id)
-    found_food = None
-    for food in canteen_test:
-        if food.id == food_id:
-            found_food = food
-    data = dict(food_list = found_food)    
-
-    return data
+def restock_page(food_id):# this passes the function food_id so i can use it in my function to control the stock.
+    food_id = int(food_id)# sets food_id to the number of food_id
+    found_food = None #sets found_food to none
+    for food in canteen_test: #creates a for loop so for each food item in canteen_test it will do what is below
+        if food.id == food_id: #creates a control statement, it will only continue if food.id is equal to food_id
+            found_food = food # sets found_food to food
+    data = dict(food_list = found_food) #sets data to the dictionary that contains all my test data. 
+    return data# returns data
 
 
 @route("/restock-success/<food_id>", method="POST")# method = POST is the method by which the python server recieves the food_id
