@@ -35,7 +35,7 @@ def menu_page():
 @route ("/tandc")
 @view("tandc")
 def terms_page():
-    pass
+    pass # this means do nothing, just lead the page and continue.
         
         
 @route("/success/<food_id>")#passes food_id
@@ -75,18 +75,18 @@ def restock_page(food_id):# this passes the function food_id so i can use it in 
 def restock_success(food_id):
     food_id = int(food_id)
     found_food = None
-    for food in canteen_test:
-        if food.id == food_id:
+    for food in canteen_test: # this says for each item of food in canteen_test DO
+        if food.id == food_id: # this matches the food id, if food.id is equal to food_id DO
             found_food = food
             data = dict(food = found_food)
             restock = request.forms.get("restock")# gets the amount to restock off the form on the webpage
-            restock = int(restock)
-            found_food.food_stock = found_food.food_stock + restock
+            restock = int(restock)# sets restock to the integer of restock
+            found_food.food_stock = found_food.food_stock + restock # adds restok to the existing stock
             
 @route("/table")
 @view("table")
 def table():
-    data = dict (food_list = canteen_test)
+    data = dict (food_list = canteen_test) # need this dictionary so I can display the food items on this page.
     return data
 
 @route('/picture/<filename>')# this allows my webpage to display saved images, which I have saved under the picture folder.
